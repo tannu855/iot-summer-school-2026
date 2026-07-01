@@ -1,2 +1,6 @@
-# iot-summer-school-2026
-IoT Summer School 2026 assignments, weekly tasks, and final project.
+# IoT Summer School 2026
+Name: Tannu
+Project Description:
+- This repository contains my IoT Summer School 2026 assignments.
+- It includes weekly tasks and the final project.
+- All code and documentation are uploaded here.
