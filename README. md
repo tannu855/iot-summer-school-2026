@@ -1,0 +1,31 @@
+# LED Blink Project (Arduino)
+
+## Project Title
+LED Blink Project using Arduino Uno
+
+## Hardware Required
+- Arduino Uno  
+- LED  
+- 220Ω Resistor  
+- Breadboard  
+- Jumper Wires  
+- USB Cable  
+
+## Circuit Diagram Description
+LED is connected to digital pin 13 of Arduino through a 220Ω resistor. The cathode of LED is connected to GND pin.
+
+## How to Upload Code
+1. Open Arduino IDE  
+2. Connect Arduino Uno via USB  
+3. Select Board (Arduino Uno)  
+4. Select COM port  
+5. Write or paste code  
+6. Click Upload  
+
+## Expected Output
+LED will blink ON and OFF repeatedly every 1 second.
+
+## Troubleshooting Tips
+- Check LED polarity (long leg positive)  
+- Verify correct COM port selection  
+- Ensure USB cable and board connection
