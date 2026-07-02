@@ -1,3 +1,8 @@
+/*
+Author: Tannu
+Date: 02-07-2026
+Description: LED blink with serial counter and potentiometer speed control.
+*/
 int led = 13;
 int pot = A0;
 int count = 0;
