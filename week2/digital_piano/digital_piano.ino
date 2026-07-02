@@ -12,7 +12,9 @@ void setup() {
   pinMode(btn4, INPUT_PULLUP);
 }
 
-void loop() {
+void loop()else {
+  noTone(buzzer);
+} {
 
   if (digitalRead(btn1) == LOW) {
     tone(buzzer, 262); // Do
