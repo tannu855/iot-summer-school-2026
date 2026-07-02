@@ -1,16 +1,20 @@
+int led = 13;
+int pot = A0;
 int count = 0;
 
 void setup() {
-  pinMode(13, OUTPUT);
+  pinMode(led, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(500);
+  int speed = analogRead(pot);
+  speed = map(speed, 0, 1023, 100, 1000);
 
-  digitalWrite(13, LOW);
-  delay(500);
+  digitalWrite(led, HIGH);
+  delay(speed);
+  digitalWrite(led, LOW);
+  delay(speed);
 
   count++;
   Serial.print("Blink count: ");
