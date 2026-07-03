@@ -1,13 +1,5 @@
 # Week 2
 This folder contains Week 2 assignments.
-## Digital Piano using Buzzer
+# Module 2: IoT Fundamentals & Arduino Programming
 
-### Features
-- 4 buttons play Do, Re, Mi and Fa
-- Two buttons together play Sol (392 Hz)
-- Mode toggle switches between Major and Minor scale
-
-### Components
-- Arduino Uno
-- 5 Push Buttons
-- Passive Buzzer
+This module covers the basics of IoT and Arduino programming. It includes Arduino concepts, digital I/O, PWM, Serial communication, LEDs, buzzers, push buttons, and theory-based questions with practical Arduino programs.
