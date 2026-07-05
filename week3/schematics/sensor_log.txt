@@ -1,139 +1,101 @@
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.24 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.16 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
-
------ SENSOR DATA -----
-Temp: 24.00 C
-Humidity: 40.00 %
-Light: 24 %
-Distance: 401.14 cm
------------------------
+=== SENSOR LOG ===
+Time      : 27
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 395
+================== 
+Time      : 5103
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 10180
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 15258
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 20336
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 25414
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 30492
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 35572
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 40651
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 45730
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 50809
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 55888
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 60966
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
+Time      : 508
+Temp  : 24.00 | Humidity  : 40.00
+Light     : 76% (BRIGHT)
+Distance  : 397
+================== 
