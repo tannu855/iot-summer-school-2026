@@ -1,0 +1,28 @@
+Q9. Explain the difference between Git Pull, Git Fetch, and Git Clone
+
+Git Clone
+
+"git clone" is used to copy a remote Git repository to your local computer.
+Use it when you are working on a repository for the first time.
+Git Fetch
+
+"git fetch" downloads the latest changes from the remote repository but does not merge them into your current branch.
+Use it when you want to check updates before applying them.
+Git Pull
+
+"git pull" downloads the latest changes and automatically merges them into your current branch.
+Use it when you want to update your local repository with the latest remote changes.
+Q10. What is a .gitignore file?
+
+A .gitignore file tells Git which files and folders should not be tracked or uploaded to the repository. It is used to ignore temporary files, compiled files, system files, and IDE configuration files.
+
+.gitignore for an Arduino Project
+
+Compiled output files
+*.hex *.elf
+
+OS-specific files
+.DS_Store Thumbs.db
+
+IDE configuration folders
+.vscode/ build/
