@@ -1,58 +1,95 @@
-const int LDR_PIN = A0;
-const int PIR_PIN = 2;
-const int LED_PIN = 9;
+int ldrPin = A0;
+int pirPin = 2;
+int ledPin = 3;
 
-const int LDR_THRESHOLD = 500;   // Adjust if needed
+int ldrThreshold = 500;
+unsigned long delayTime = 3000;
 
-unsigned long motionTime = 0;
-bool motionDetected = false;
+int fullBright = 255; 
+int dimBright = 51;
+int offBright = 0; 
+
+unsigned long lastMotionTime = 0;
+
+bool motionActive = false;
+bool isNight = false;
 
 void setup() {
-  pinMode(PIR_PIN, INPUT);
-  pinMode(LED_PIN, OUTPUT);
-
   Serial.begin(9600);
+
+  pinMode(ldrPin, INPUT);
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+
+  analogWrite(ledPin, offBright);
+
+  logMessage("SYSTEM INITIALIZED");
 }
 
 void loop() {
 
-  int ldrValue = analogRead(LDR_PIN);
-  int pirValue = digitalRead(PIR_PIN);
+  int ldrReading = analogRead(ldrPin);
+  int pirReading = digitalRead(pirPin);
 
-  // DAY MODE
-  if (ldrValue > LDR_THRESHOLD) {
-    analogWrite(LED_PIN, 0);
-    motionDetected = false;
+  if (ldrReading > ldrThreshold) {
 
-    Serial.print("[");
-    Serial.print(millis() / 1000);
-    Serial.println("s] EVENT: Day Mode - LED OFF");
+    if (isNight) {
+      isNight = false;
+      motionActive = false;
 
-    delay(1000);
-    return;
+      analogWrite(ledPin, offBright);
+
+      logMessage("DAYLIGHT DETECTED - LED OFF");
+    }
+
+    return; 
   }
 
-  // NIGHT MODE
-  if (pirValue == HIGH) {
-    analogWrite(LED_PIN, 255);   // Full Brightness
-    motionTime = millis();
-    motionDetected = true;
+  if (!isNight) {
+    isNight = true;
 
-    Serial.print("[");
-    Serial.print(millis() / 1000);
-    Serial.println("s] EVENT: Motion Detected - LED ON");
+    analogWrite(ledPin, dimBright);
+
+    logMessage("DARKNESS DETECTED - Motion Detection Mode Enabled");
   }
 
-  // 30 seconds after last motion
-  if (motionDetected && millis() - motionTime >= 30000) {
-    analogWrite(LED_PIN, 51);    // 20% Brightness
+  if (pirReading == HIGH) {
 
-    Serial.print("[");
-    Serial.print(millis() / 1000);
-    Serial.println("s] EVENT: No Motion - LED DIM");
+    if (!motionActive) {
+      logMessage("MOTION DETECTED - LED at Full Brightness (100%)");
+    }
 
-    motionDetected = false;
+    motionActive = true;
+    lastMotionTime = millis();
+
+    analogWrite(ledPin, fullBright);
+  }
+
+ 
+  if (motionActive && (millis() - lastMotionTime >= delayTime)) {
+
+    analogWrite(ledPin, dimBright);
+
+    motionActive = false;
+
+    logMessage("TIMEOUT - No Motion for 30 Seconds. LED Dimmed to 20%");
   }
 
   delay(100);
+}
+
+void logMessage(String text) {
+
+  unsigned long totalSecs = millis() / 1000;
+
+  int s = totalSecs % 60;
+  int m = (totalSecs / 60) % 60;
+  int h = (totalSecs / 3600) % 24;
+
+  char timeStamp[12];
+  sprintf(timeStamp, "[%02d:%02d:%02d]", h, m, s);
+
+  Serial.print(timeStamp);
+  Serial.print(" EVENT: ");
+  Serial.println(text);
 }
