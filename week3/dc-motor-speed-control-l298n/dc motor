@@ -1,4 +1,3 @@
-//Tinkercad Link : https://www.tinkercad.com/things/0yDEQGU5j25-dc-motor-speed-control-with-l293d-
 const int pot = A0;
 const int dirBtn = 2;
 const int startBtn = 3;
