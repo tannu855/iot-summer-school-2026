@@ -1,27 +1,10 @@
-/*
-Author: Tannu
-Date: 02-07-2026
-Description: LED blink with serial counter and potentiometer speed control.
-*/
-int led = 13;
-int pot = A0;
-int count = 0;
-
 void setup() {
-  pinMode(led, OUTPUT);
-  Serial.begin(9600);
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
-  int speed = analogRead(pot);
-  speed = map(speed, 0, 1023, 100, 1000);
-
-  digitalWrite(led, HIGH);
-  delay(speed);
-  digitalWrite(led, LOW);
-  delay(speed);
-
-  count++;
-  Serial.print("Blink count: ");
-  Serial.println(count);
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
 }
