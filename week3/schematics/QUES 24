@@ -1,65 +1,93 @@
 #include <DHT.h>
 
-#define DHTPIN 2
-#define DHTTYPE DHT22
+#define dhtpin 2
+#define dhttype DHT22
+#define trig 4
+#define echo 5
+int ldr = A0 ;
+DHT dht(dhtpin , dhttype);
 
-#define LDR_PIN A0
-#define TRIG_PIN 9
-#define ECHO_PIN 10
 
-DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   Serial.begin(9600);
-
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
-
   dht.begin();
+  pinMode(dhtpin , INPUT);
+  pinMode(trig , OUTPUT);
+  pinMode(echo , INPUT);
+  pinMode(ldr , INPUT);
+  Serial.println("=== SENSOR LOG ===");
+
+
 }
 
 void loop() {
 
-  // DHT22
-  float temperature = dht.readTemperature();
-  float humidity = dht.readHumidity();
+//DHT22
+  float h = dht.readHumidity();
+  float c = dht.readTemperature();
 
-  // LDR
-  int lightRaw = analogRead(LDR_PIN);
-  int lightPercent = map(lightRaw, 0, 1023, 0, 100);
+  if (isnan(h) || isnan(c) ){
+    return ;
+  }
 
-  // HC-SR04
-  digitalWrite(TRIG_PIN, LOW);
+  //UltraSonic Sensor
+  digitalWrite(trig , LOW);
   delayMicroseconds(2);
-
-  digitalWrite(TRIG_PIN, HIGH);
+  digitalWrite(trig , HIGH);
   delayMicroseconds(10);
+  digitalWrite(trig , LOW);
 
-  digitalWrite(TRIG_PIN, LOW);
+  long dur = pulseIn(echo , HIGH);
+  int dis = dur*0.034/2 ;
 
-  long duration = pulseIn(ECHO_PIN, HIGH);
-  float distance = duration * 0.0343 / 2;
 
-  Serial.println("----- SENSOR DATA -----");
+  
+  unsigned int timestamp = millis() ;
 
-  Serial.print("Temp: ");
-  Serial.print(temperature);
-  Serial.println(" C");
 
-  Serial.print("Humidity: ");
-  Serial.print(humidity);
-  Serial.println(" %");
+  //LDR
 
-  Serial.print("Light: ");
-  Serial.print(lightPercent);
-  Serial.println(" %");
+  int raw = analogRead(ldr);
+  int per = map(raw , 0 , 1023 , 100 , 0);
 
-  Serial.print("Distance: ");
-  Serial.print(distance);
-  Serial.println(" cm");
 
-  Serial.println("-----------------------");
-  Serial.println();
+
+
+  // printing
+  
+  Serial.print("Time      : ");
+  Serial.print(timestamp);
+  
+  Serial.print("\n");
+  
+  Serial.print("Temp  : ");  
+  Serial.print(c);
+  Serial.print(" | Humidity  : ");
+  Serial.print(h);
+  
+  Serial.print("\n");
+
+  Serial.print("Light     : ");
+  Serial.print(per);
+  Serial.print("% (BRIGHT)");
+
+  Serial.print("\n");
+
+  Serial.print("Distance  : ");
+  Serial.print(dis);
+
+  Serial.print("\n");
+  
+
+  Serial.print("================== ");
+  Serial.print("\n");
+
 
   delay(5000);
+
+
+
+
+
 }
